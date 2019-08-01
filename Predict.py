@@ -1,7 +1,4 @@
 def predict_survival(df):
-
-    # from sklearn.linear_model import LogisticRegression
-    # from sklearn.svm import SVC, LinearSVC
     from sklearn.ensemble import RandomForestClassifier
 
     train_df = df.query('TestData==0')
@@ -12,19 +9,12 @@ def predict_survival(df):
 
     X_test  = test_df.drop("Survived", axis=1).copy()
 
-    X_test
-    # Random Forest
     random_forest = RandomForestClassifier(n_estimators=100)
     random_forest.fit(X_train, Y_train)
     Y_pred = random_forest.predict(X_test)
+    
     X_test['survive_pred']=Y_pred
     return X_test
-
-    # random_forest.score(X_train, Y_train)
-    # acc_random_forest = round(random_forest.score(X_train, Y_train) * 100, 2)
-    # acc_random_forest
-    # rf_score = pd.DataFrame(data={'algorithm':['Random Forest'],'score':[acc_random_forest]})
-    
 
 def get_output_schema():
     return pd.DataFrame({

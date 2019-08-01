@@ -12,7 +12,11 @@ def get_output_schema():
         'Parch': prep_int(),
         'SexNum':prep_int(),
         'TitleNum': prep_int(),
+        'Title': prep_string(),
+        'Name': prep_string(),
         'SibSp': prep_int(),
         'Fare': prep_decimal(),
         'FamilySize': prep_int(),
+        'Sex': prep_string(),
+        'Age': prep_decimal(),
     })
