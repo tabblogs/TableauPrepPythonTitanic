@@ -1,5 +1,6 @@
 def age_bands(df):
     df['AgeBand'] = pd.cut(df['AgeAugmented'], 5)
+    # this will fail because the format of the returned age band field is not a string
     return df
 	
 def get_output_schema():
